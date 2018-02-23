@@ -1,0 +1,53 @@
+<div id="modal_form" ng-show='content_obj.form_show'>
+
+		<div id="modal_content">
+
+			<div class="modal-header">
+
+				 <button ng-click='content_obj.form_show=false' type="button" class="close">&times;</button>
+
+				 <h4 class="modal-title">{{ content_obj.form_action }} Post</h4>
+
+			</div>
+
+			<div class="modal-body">
+
+				<form enctype='multipart/form-data' ng-submit='create_post()'>
+					<div class='button_container'>
+						<input required ng-model='current_form_obj.name' type='text' name='name'  placeholder='Name' class='form_input current_form_obj.input'>
+					</div>
+					<br>
+					<div class='button_container'>
+						<input required string-to-number ng-model='current_form_obj.price' type='number' name='price' placeholder='Price' class='form_input current_form_obj.input'>
+					</div>
+					<br>
+					<div class='button_container'>
+						<select required ng-model='current_form_obj.type' name="type" class='form_input current_form_obj.input'>
+							<option value="" selected disabled hidden>Type</option>
+							<option value="men">Men</option>
+							<option value="women">Women</option>
+							<option value="art">Art</option>
+							<option value="book">Book</option>
+						</select>
+					</div>
+					<br>
+					<div class='button_container'>
+						<input required type='file' id='current_form_obj.image' name='image'>
+					</div>
+					<br>
+					<div class='button_container'>
+						<button class='current_form_obj.submit styled_button' type='submit'>
+							{{ content_obj.form_action }}
+						</button>
+					</div>
+				</form>
+
+
+			</div>
+
+			<div class="modal-footer">
+			</div>
+
+		 </div>
+
+</div>
